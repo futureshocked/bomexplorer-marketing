@@ -1,7 +1,7 @@
 # TASK_HANDOFF.md - BOMexplorer Marketing Site
 
 ## Current State
-**STATUS**: Deployed and live at https://bomexplorer-marketing.pages.dev/
+**STATUS**: Deployed and live at https://bomexplorer.app (also https://bomexplorer-marketing.pages.dev/)
 
 ## Project Overview
 - **Name**: BOMexplorer Marketing Website
@@ -21,7 +21,7 @@
 - `/features` - Feature details page
 - `/pricing` - Pricing tiers (Free, Pro, Team) + FAQ
 - `/about` - About page
-- `/contact` - Contact/waitlist page
+- `/contact` - Contact/waitlist page (Formspree form)
 - `/faq` - FAQ page
 
 ## Components
@@ -38,10 +38,17 @@
 - Glow effects via CSS shadows (`--shadow-glow-blue`, `--shadow-glow-teal`)
 
 ## Deployment
-- Pure static site - no workers or runtime dependencies
-- Deployed to Cloudflare Pages (latest commit: e12eaf3)
-- Live URL: https://bomexplorer-marketing.pages.dev/
-- Auto-deploys on push to master branch
+- **Platform**: Cloudflare Pages
+- **Live URLs**: 
+  - https://bomexplorer.app (custom domain)
+  - https://bomexplorer-marketing.pages.dev (default)
+- **Auto-deploy**: Any push to `master` branch triggers automatic deployment
+- **Manual deploy**: Cloudflare dashboard → Workers & Pages → Pages → bomexplorer-marketing → Deployments → "Deploy site"
+- **Build settings**: `npm run build` → output `dist`
+
+## Integrations
+- **Contact form**: Formspree (ID: mgorzzwj) → emails to hello@bomexplorer.app
+- **Custom domain**: bomexplorer.app configured in Cloudflare Pages
 
 ## Completed Tasks
 - [x] Build marketing site with Astro + Tailwind
@@ -49,8 +56,10 @@
 - [x] Create reusable components (Nav, Footer, FeatureCard, PricingCard, FaqItem)
 - [x] Deploy to Cloudflare Pages
 - [x] Remove broken submodule (nebulous-nebula)
+- [x] Set up custom domain (bomexplorer.app)
+- [x] Integrate Formspree for contact form
 
 ## Next Goals
-- [ ] Configure Cloudflare Zero Trust Access for IP restriction (manual - see DEPLOYMENT.md)
-- [ ] Add custom domain (optional)
-- [ ] Set up analytics (optional)
+- [ ] Configure Cloudflare Zero Trust Access for IP restriction (optional)
+- [ ] Add analytics (optional)
+- [ ] Set up email forwarding for hello@bomexplorer.app (if not already done)
