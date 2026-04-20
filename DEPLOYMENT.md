@@ -1,26 +1,27 @@
-# Cloudflare Pages Deployment Guide
+# Cloudflare Workers Deployment Guide
 
 ## Table of Contents
-1. [Quick Deploy](#quick-deploy)
+1. [Deploy via Cloudflare Dashboard](#deploy-via-cloudflare-dashboard)
 2. [IP Restriction - Middleware](#ip-restriction---middleware)
 3. [IP Restriction - Cloudflare Access](#ip-restriction---cloudflare-access)
 4. [Going Public](#going-public)
 
-## Quick Deploy
+## Deploy via Cloudflare Dashboard
 
-### Option A: Via Cloudflare Dashboard
+### Via Cloudflare Workers & Pages
 1. Go to [dash.cloudflare.com](https://dash.cloudflare.com)
-2. Navigate to **Workers & Pages** → **Pages**
-3. Click **Create a project** → **Connect to Git**
+2. Navigate to **Workers & Pages** → **Create a Worker**
+3. Select **Connect to Git**
 4. Select this repo: `futureshocked/bomexplorer-marketing`
 5. Configure:
+   - **Project name:** `bomexplorer-marketing`
    - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-   - **Node.js version:** `22` (or latest)
-   - **Environment variables:** None required for IP restriction
-6. Click **Save and Deploy**
+   - **Deploy command:** `npm run build && npx wrangler deploy`
+   - **Clear** the "Non-production branch deploy command" field
+   - **Path:** `/`
+6. Click **Deploy**
 
-### Option B: Via Wrangler CLI
+### Via Wrangler CLI (local)
 ```bash
 # Install Wrangler
 npm install -g wrangler
