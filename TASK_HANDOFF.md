@@ -63,3 +63,14 @@
 - [ ] Configure Cloudflare Zero Trust Access for IP restriction (optional)
 - [ ] Add analytics (optional)
 - [ ] Set up email forwarding for hello@bomexplorer.app (if not already done)
+
+## Future: Replace Formspree with n8n + Baserow
+**Goal:** Remove external Formspree dependency, use self-hosted n8n + Baserow for form submissions.
+
+**Steps:**
+1. **Baserow:** Create table `contact_submissions` with columns: `name`, `email`, `subject`, `message`, `timestamp`
+2. **n8n:** Create workflow: Webhook trigger → Baserow (create row) → Email (notification to hello@bomexplorer.app)
+3. **Form:** Update `src/pages/contact.astro` form action to n8n webhook URL
+4. **Test:** Submit form → verify data in Baserow + email received
+
+**Benefits:** Full data ownership, no external dependencies, Baserow as CRM, n8n for automation (Slack alerts, auto-replies, etc.)
