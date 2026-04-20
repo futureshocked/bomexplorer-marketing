@@ -1,7 +1,7 @@
 # TASK_HANDOFF.md - BOMexplorer Marketing Site
 
 ## Current State
-**STATUS**: Ready for Cloudflare Pages deployment. All code pushed.
+**STATUS**: Deployed and live at https://bomexplorer-marketing.pages.dev/
 
 ## Project Overview
 - **Name**: BOMexplorer Marketing Website
@@ -39,10 +39,18 @@
 
 ## Deployment
 - Pure static site - no workers or runtime dependencies
-- All code pushed to GitHub (master branch, commit fb97de4)
-- Deploy via Cloudflare Pages (see DEPLOYMENT.md)
-- IP restriction via Cloudflare Zero Trust Access (free tier)
+- Deployed to Cloudflare Pages (latest commit: e12eaf3)
+- Live URL: https://bomexplorer-marketing.pages.dev/
+- Auto-deploys on push to master branch
+
+## Completed Tasks
+- [x] Build marketing site with Astro + Tailwind
+- [x] Create all pages (home, features, pricing, about, contact, faq, why)
+- [x] Create reusable components (Nav, Footer, FeatureCard, PricingCard, FaqItem)
+- [x] Deploy to Cloudflare Pages
+- [x] Remove broken submodule (nebulous-nebula)
 
 ## Next Goals
-- [ ] Deploy to Cloudflare Pages
-- [ ] Configure Zero Trust Access for IP restriction
+- [ ] Configure Cloudflare Zero Trust Access for IP restriction (manual - see DEPLOYMENT.md)
+- [ ] Add custom domain (optional)
+- [ ] Set up analytics (optional)
