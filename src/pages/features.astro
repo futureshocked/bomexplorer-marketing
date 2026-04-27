@@ -5,12 +5,14 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 <MarketingLayout title="Features - BOMexplorer" currentPage="features">
 	<section class="py-20 px-4 sm:px-6 lg:px-8">
 		<div class="max-w-7xl mx-auto">
+			<!-- Unified Hero -->
 			<div class="text-center mb-16">
-				<h1 class="text-5xl font-bold text-[var(--color-text)] mb-6 font-mono">
+				<span class="text-xs font-mono text-[var(--color-secondary)] uppercase tracking-widest border border-[var(--color-secondary)]/30 rounded-full px-3 py-1">[ FEATURES ]</span>
+				<h1 class="text-5xl font-bold text-[var(--color-text)] mt-6 mb-6 font-mono">
 					Engineered for precision
 				</h1>
-				<p class="text-xl text-[var(--color-text-muted)] max-w-3xl mx-auto">
-					BOMexplorer automates the tedious parts of BOM management, giving you accurate data and saving hours of manual work.
+				<p class="text-xl text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+					BOMexplorer isn't just another BOM tool. It's the only platform that combines multi-provider aggregation, AI-powered matching, and supply chain monitoring in one workflow — automating the tedious parts of BOM management, giving you accurate data and saving hours of manual work.
 				</p>
 			</div>
 
@@ -45,29 +47,53 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 			<!-- Multi-Provider Search -->
 			<div class="mb-20 bg-[var(--color-surface)] py-16 px-8 rounded-lg shadow-[var(--shadow-card)]">
-				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 02 ]</span>
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2 lg:order-2">
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Many providers. One search.</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Simultaneous query with fallback</h3>
-								<p class="text-[var(--color-text-muted)]">Queries OEMSecrets, DigiKey, Mouser, Nexar, and FindChips. If the active provider returns no results, automatically tries the next configured provider in sequence.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Source badge per row</h3>
-								<p class="text-[var(--color-text-muted)]">Every BOM line shows which provider supplied the match — always visible, always clear.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Provider health tracking</h3>
-								<p class="text-[var(--color-text-muted)]">Admins can monitor real-time provider status, latency, and error rates with auto-refresh.</p>
-							</div>
+				<div class="max-w-7xl mx-auto">
+					<div class="mb-8">
+						<div class="flex items-center gap-3">
+							<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 02 ]</span>
+							<span class="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] text-xs font-semibold px-2 py-1 rounded">Unique Capability</span>
 						</div>
 					</div>
-					<div class="order-1 lg:order-1">
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/fb596927-a29d-4c51-5ea1-a62f8310d700/1920" alt="Multi-provider search with source badges" class="w-full h-auto rounded" />
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div>
+							<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Many providers. One search.</h2>
+							<p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+								While other tools query a single distributor, BOMexplorer searches OEMSecrets, DigiKey, Mouser, Nexar, and FindChips simultaneously — or uses a smart fallback chain if one returns no results.
+							</p>
+							<div class="space-y-3">
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Automatic fallback</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">If one provider has no results, the next is tried automatically.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Configurable provider order</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Admins can set the provider sequence based on pricing preference.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Source badge per row</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Every BOM line shows exactly which provider supplied the match.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Provider health tracking</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Real-time provider status, latency, and error rates with auto-refresh.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6 shadow-[var(--shadow-card)]">
+							<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/400e87d5-9257-426a-34ca-16d53c077100/1920" alt="BOM table with multi-provider source badges" class="w-full h-auto rounded" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -75,61 +101,89 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 			<!-- AI-Powered Matching -->
 			<div class="mb-20">
 				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 03 ]</span>
+					<div class="flex items-center gap-3">
+						<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 03 ]</span>
+						<span class="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] text-xs font-semibold px-2 py-1 rounded">AI-Powered</span>
+					</div>
 				</div>
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 					<div>
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">AI-Powered Matching</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Hierarchical matching</h3>
-								<p class="text-[var(--color-text-muted)]">Exact MPN → hyphen-stripped MPN → distributor part number → keyword search. Multi-stage matching ensures maximum coverage.</p>
+						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">AI that understands KiCad quirks</h2>
+						<p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+							BOMexplorer uses Claude AI to classify components that traditional matching can't handle — crystal symbols, fiducials, mounting holes, and copper-only net ties. It generates targeted queries specific to each provider's API.
+						</p>
+						<div class="space-y-3">
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Hierarchical matching</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Exact MPN → hyphen-stripped MPN → distributor part number → keyword search. Multi-stage matching ensures maximum coverage.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">AI classification</h3>
-								<p class="text-[var(--color-text-muted)]">Claude-powered classification for unmatchable values — crystal symbols, fiducials, mounting holes, copper-only parts. Generates automated, provider-specific queries.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">AI classification</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Claude-powered classification for unmatchable values — crystal symbols, fiducials, mounting holes, copper-only parts. Generates automated, provider-specific queries.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Smart skip list</h3>
-								<p class="text-[var(--color-text-muted)]">Automatically skips known unmatchable values (TestPoint, LED, Fiducial, MountingHole) unless an explicit MPN is provided.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Smart skip list</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Auto-skips unmatchable values (TestPoint, LED, Fiducial, MountingHole) unless an explicit MPN is provided.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Confidence indicators</h3>
-								<p class="text-[var(--color-text-muted)]">Visual badges: exact MPN, parametric, keyword, AI-suggested, unmatched. Always know match quality at a glance.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Confidence badges</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Visual indicators: exact MPN, parametric, keyword, AI-suggested, unmatched. Always know match quality at a glance.</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div>
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/f037da43-658c-4489-3176-306a744a4000/1024pxwide" alt="AI-Powered matching with confidence badges" class="w-full h-auto rounded" />
+						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/51db84a7-553b-4e02-20e1-4781cd68db00/1024pxwide" alt="AI-powered matching with confidence badges for KiCad components" class="w-full h-auto rounded" />
 					</div>
 				</div>
 			</div>
 
 			<!-- Natural Language Query -->
 			<div class="mb-20 bg-[var(--color-surface)] py-16 px-8 rounded-lg shadow-[var(--shadow-card)]">
-				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 04 ]</span>
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2 lg:order-2">
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Natural language query</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Talk to your BOM</h3>
-								<p class="text-[var(--color-text-muted)]">Type plain-English filters — "show me capacitors under $0.10" — to instantly highlight matching rows. A rare UX feature in BOM management tools.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Powered by Claude Haiku</h3>
-								<p class="text-[var(--color-text-muted)]">Fast, cost-effective AI with debounced input for real-time highlighting without lag.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Visual filtering</h3>
-								<p class="text-[var(--color-text-muted)]">Matching rows get amber borders for instant visual identification. No scrolling, no exporting — just type and see.</p>
-							</div>
+				<div class="max-w-7xl mx-auto">
+					<div class="mb-8">
+						<div class="flex items-center gap-3">
+							<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 04 ]</span>
+							<span class="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] text-xs font-semibold px-2 py-1 rounded">AI Assist</span>
 						</div>
 					</div>
-					<div class="order-1 lg:order-1">
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/feeeb268-3e85-44f9-9f7b-32713e5eda00/1920" alt="Natural language query filtering BOM data" class="w-full h-auto rounded" />
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-2">
+							<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Talk to your BOM in plain English</h2>
+							<p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+								Need to find all capacitors under $0.10? Or surface-mount resistors with low stock? Just type it. BOMexplorer's AI Assist understands natural language queries and highlights matching rows in real-time — a rare UX feature in BOM management tools.
+							</p>
+							<div class="space-y-3">
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Powered by Claude Haiku</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Fast, cost-effective AI for responsive BOM filtering with debounced input for real-time highlighting without lag.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Amber row highlighting</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Matching rows are visually highlighted with amber borders for instant recognition. No scrolling, no exporting — just type and see.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="order-1 lg:order-1">
+							<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/0ace1188-147d-48f7-ab73-24a6c37bfc00/1920" alt="Natural language BOM query with highlighted matching rows" class="w-full h-auto rounded" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -169,33 +223,53 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 			<!-- Alternatives & Substitution -->
 			<div class="mb-20 bg-[var(--color-surface)] py-16 px-8 rounded-lg shadow-[var(--shadow-card)]">
-				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 06 ]</span>
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2 lg:order-2">
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Alternatives & Substitution</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Full-page alternatives view</h3>
-								<p class="text-[var(--color-text-muted)]">Dedicated view per BOM line showing all ranked candidate parts with pricing, stock levels, and distributor information.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">One-click swap</h3>
-								<p class="text-[var(--color-text-muted)]">Swap parts with a confirmation dialog. Auto-records every substitution for audit trail.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Substitution history</h3>
-								<p class="text-[var(--color-text-muted)]">Collapsible timeline showing all swaps with MPN, timestamps, and trigger reason. Full traceability.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Part ranking</h3>
-								<p class="text-[var(--color-text-muted)]">AI-suggested candidates marked with badge. Rank 2+ results auto-stored as alternatives.</p>
-							</div>
+				<div class="max-w-7xl mx-auto">
+					<div class="mb-8">
+						<div class="flex items-center gap-3">
+							<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 06 ]</span>
+							<span class="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] text-xs font-semibold px-2 py-1 rounded">Workflow</span>
 						</div>
 					</div>
-					<div class="order-1 lg:order-1">
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/3de15d6f-a38b-42b3-5b1d-699b00eb9b00/1920" alt="Alternatives and substitution view" class="w-full h-auto rounded" />
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-2">
+							<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">One-click swaps with full history</h2>
+							<p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+								When a part goes out of stock or you find a better price, BOMexplorer makes substitution effortless. View ranked alternatives, swap with one click, and maintain a full audit trail of every change.
+							</p>
+							<div class="space-y-3">
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Full-page alternatives view</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Dedicated view per BOM line showing all ranked candidate parts with pricing, stock levels, and distributor information.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">One-click swap</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Swap parts with a confirmation dialog. Auto-records every substitution for audit trail.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Substitution timeline</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">Collapsible history showing all swaps with MPN, timestamps, and trigger reason. Full traceability.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<span class="text-[var(--color-secondary)] mt-1">✓</span>
+									<div>
+										<h4 class="text-[var(--color-text)] font-semibold text-sm">Part ranking</h4>
+										<p class="text-[var(--color-text-muted)] text-sm">AI-suggested candidates marked with badge. Rank 2+ results auto-stored as alternatives.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="order-1 lg:order-1">
+							<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/cabd3cc2-6bdf-4030-5bca-a2ebb8783a00/1920" alt="One-click part substitution with full audit history" class="w-full h-auto rounded" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -203,27 +277,45 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 			<!-- Supply Chain Monitoring -->
 			<div class="mb-20">
 				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 07 ]</span>
+					<div class="flex items-center gap-3">
+						<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 07 ]</span>
+						<span class="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] text-xs font-semibold px-2 py-1 rounded">Continuous Monitoring</span>
+					</div>
 				</div>
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 					<div>
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Supply Chain Monitoring</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Overnight re-query</h3>
-								<p class="text-[var(--color-text-muted)]">Celery background job re-checks all active BOM lines for price and stock changes. Set it and forget it.</p>
+						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Overnight supply chain alerts</h2>
+						<p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+							Set your BOM and forget it. BOMexplorer runs overnight re-queries on all active BOM lines, detecting price changes, stock drops, end-of-life notices, and lead time increases before they derail your production run.
+						</p>
+						<div class="space-y-3">
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Overnight re-query</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Celery background job re-checks all active BOM lines for price and stock changes. Set it and forget it.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Flag detection</h3>
-								<p class="text-[var(--color-text-muted)]">Out-of-stock, low-stock, price spike, end-of-life, and lead-time increase alerts — all detected automatically.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Flag detection</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Out-of-stock, low-stock, price spikes, end-of-life, and lead-time increase alerts — all detected automatically.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Alert lifecycle</h3>
-								<p class="text-[var(--color-text-muted)]">Open → Watching → Ignored → Resolved workflow with snooze support. Control which alerts need action.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Alert lifecycle</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Open → Watching → Ignored → Resolved workflow with snooze support. Control which alerts need action.</p>
+								</div>
 							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Morning digest email</h3>
-								<p class="text-[var(--color-text-muted)]">Start your day informed. Automated email summary of new flags, delivered to your inbox each morning.</p>
+							<div class="flex items-start gap-3">
+								<span class="text-[var(--color-secondary)] mt-1">✓</span>
+								<div>
+									<h4 class="text-[var(--color-text)] font-semibold text-sm">Morning email digest</h4>
+									<p class="text-[var(--color-text-muted)] text-sm">Daily summary email of new flags so you start the day informed.</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -243,25 +335,27 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 			<!-- Preferences -->
 			<div class="mb-20 bg-[var(--color-surface)] py-16 px-8 rounded-lg shadow-[var(--shadow-card)]">
-				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 08 ]</span>
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2 lg:order-2">
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Preferences & Configuration</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Global user preferences</h3>
-								<p class="text-[var(--color-text-muted)]">Configure distributor order, excluded distributors, preferred manufacturers, accepted generic passives, lifecycle policy, currency, region, and grade.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Per-project overrides</h3>
-								<p class="text-[var(--color-text-muted)]">Override global settings per project — distributor restrictions, quantity, grade, lifecycle policy. Null values inherit from global.</p>
+				<div class="max-w-7xl mx-auto">
+					<div class="mb-8">
+						<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 08 ]</span>
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-2">
+							<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Preferences & Configuration</h2>
+							<div class="space-y-4">
+								<div>
+									<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Global user preferences</h3>
+									<p class="text-[var(--color-text-muted)]">Configure distributor order, excluded distributors, preferred manufacturers, accepted generic passives, lifecycle policy, currency, region, and grade.</p>
+								</div>
+								<div>
+									<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Per-project overrides</h3>
+									<p class="text-[var(--color-text-muted)]">Override global settings per project — distributor restrictions, quantity, grade, lifecycle policy. Null values inherit from global.</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="order-1 lg:order-1">
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/ac368677-8eda-4737-272f-8f03d2f21500/1920" alt="Preferences and configuration settings" class="w-full h-auto rounded" />
+						<div class="order-1 lg:order-1">
+							<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/ac368677-8eda-4737-272f-8f03d2f21500/1920" alt="Preferences and configuration settings" class="w-full h-auto rounded" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -297,30 +391,46 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 			<!-- Authentication & Account -->
 			<div class="mb-20 bg-[var(--color-surface)] py-16 px-8 rounded-lg shadow-[var(--shadow-card)]">
-				<div class="mb-8">
-					<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 10 ]</span>
-				</div>
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div class="order-2 lg:order-2">
-						<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Security & Account</h2>
-						<div class="space-y-4">
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">JWT authentication</h3>
-								<p class="text-[var(--color-text-muted)]">Email/password auth with short-lived access + refresh tokens in httpOnly cookies.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Email verification</h3>
-								<p class="text-[var(--color-text-muted)]">Signup verification flow with resend capability.</p>
-							</div>
-							<div>
-								<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Secure password reset</h3>
-								<p class="text-[var(--color-text-muted)]">Tokenised email link with 24h expiry. Always-200 response to prevent email enumeration.</p>
+				<div class="max-w-7xl mx-auto">
+					<div class="mb-8">
+						<span class="text-[var(--color-secondary)] text-sm font-mono font-bold tracking-widest">[ 10 ]</span>
+					</div>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<div class="order-2 lg:order-2">
+							<h2 class="text-3xl font-bold text-[var(--color-text)] mb-6 font-mono">Security & Account</h2>
+							<div class="space-y-4">
+								<div>
+									<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">JWT authentication</h3>
+									<p class="text-[var(--color-text-muted)]">Email/password auth with short-lived access + refresh tokens in httpOnly cookies.</p>
+								</div>
+								<div>
+									<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Email verification</h3>
+									<p class="text-[var(--color-text-muted)]">Signup verification flow with resend capability.</p>
+								</div>
+								<div>
+									<h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Secure password reset</h3>
+									<p class="text-[var(--color-text-muted)]">Tokenised email link with 24h expiry. Always-200 response to prevent email enumeration.</p>
+								</div>
 							</div>
 						</div>
+						<div class="order-1 lg:order-1">
+							<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/9e472433-5c3e-40e8-92eb-f115512abd00/1024pxwide" alt="Security and account authentication" class="w-full h-auto rounded" />
+						</div>
 					</div>
-					<div class="order-1 lg:order-1">
-						<img src="https://imagedelivery.net/EzErua5FfjxwIvZXiki_dA/9e472433-5c3e-40e8-92eb-f115512abd00/1024pxwide" alt="Security and account authentication" class="w-full h-auto rounded" />
-					</div>
+				</div>
+			</div>
+
+			<!-- CTA -->
+			<div class="text-center pt-8 border-t border-[var(--color-border)]">
+				<h2 class="text-3xl font-bold text-[var(--color-text)] mb-4 font-mono">Ready to stop manual BOM sourcing?</h2>
+				<p class="text-[var(--color-text-muted)] mb-8">Join hardware engineers who've already made the switch.</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/contact" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-200">
+						Get Early Access
+					</a>
+					<a href="/pricing" class="border border-[var(--color-border)] text-[var(--color-text)] px-8 py-3 rounded-md font-semibold hover:border-[var(--color-secondary)] hover:shadow-[var(--shadow-glow-teal)] transition-all duration-200">
+						View Pricing
+					</a>
 				</div>
 			</div>
 

@@ -25,14 +25,6 @@ const { currentPage } = Astro.props;
 					)}
 				</div>
 				<div class="relative group">
-					<a href="/why" class={`text-sm font-medium transition-colors ${currentPage === 'why' ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)]'}`}>
-						Why BOMexplorer
-					</a>
-					{currentPage === 'why' && (
-						<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)]/50 rounded-full"></div>
-					)}
-				</div>
-				<div class="relative group">
 					<a href="/pricing" class={`text-sm font-medium transition-colors ${currentPage === 'pricing' ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)]'}`}>
 						Pricing
 					</a>
@@ -56,9 +48,6 @@ const { currentPage } = Astro.props;
 			<div class="px-2 pt-2 pb-3 space-y-1 border-t border-[var(--color-border)] mt-4">
 				<a href="/features" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'features' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
 					Features
-				</a>
-				<a href="/why" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'why' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
-					Why BOMexplorer
 				</a>
 				<a href="/pricing" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'pricing' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
 					Pricing
