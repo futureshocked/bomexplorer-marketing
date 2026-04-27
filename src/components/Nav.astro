@@ -40,30 +40,6 @@ const { currentPage } = Astro.props;
 						<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)]/50 rounded-full"></div>
 					)}
 				</div>
-				<div class="relative group">
-					<a href="/about" class={`text-sm font-medium transition-colors ${currentPage === 'about' ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)]'}`}>
-						About
-					</a>
-					{currentPage === 'about' && (
-						<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)]/50 rounded-full"></div>
-					)}
-				</div>
-				<div class="relative group">
-					<a href="/faq" class={`text-sm font-medium transition-colors ${currentPage === 'faq' ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)]'}`}>
-						FAQ
-					</a>
-					{currentPage === 'faq' && (
-						<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)]/50 rounded-full"></div>
-					)}
-				</div>
-				<div class="relative group">
-					<a href="/docs" class={`text-sm font-medium transition-colors ${currentPage === 'docs' ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)]'}`}>
-						Documentation
-					</a>
-					{currentPage === 'docs' && (
-						<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)]/50 rounded-full"></div>
-					)}
-				</div>
 				<a href="/contact" class="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] text-white px-4 py-2 rounded-md text-sm font-medium hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-200">
 					Get Early Access
 				</a>
@@ -86,15 +62,6 @@ const { currentPage } = Astro.props;
 				</a>
 				<a href="/pricing" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'pricing' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
 					Pricing
-				</a>
-				<a href="/about" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'about' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
-					About
-				</a>
-				<a href="/faq" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'faq' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
-					FAQ
-				</a>
-				<a href="/docs" class={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${currentPage === 'docs' ? 'text-[var(--color-primary)] bg-[var(--color-primary-dim)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface-2)]'}`}>
-					Documentation
 				</a>
 				<a href="/contact" class="block px-3 py-2 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] text-white rounded-md text-base font-medium hover:shadow-lg transition-all duration-200">
 					Get Early Access
