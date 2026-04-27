@@ -1,0 +1,74 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Exporting - Documentation - BOMexplorer" currentPage="/docs/exporting">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/exporting" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Exporting
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Export your BOM as CSV or XLSX for manufacturers and assembly partners.
+						</p>
+					</div>
+
+					<!-- Export Process -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							How to Export
+						</h2>
+						<ol class="list-decimal list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Open a project.</li>
+							<li>Click the <strong class="text-[var(--color-text)]">Export</strong> dropdown above the BOM table.</li>
+							<li>Choose <strong class="text-[var(--color-text)]">CSV</strong> or <strong class="text-[var(--color-text)]">XLSX</strong> (Pro tier only).</li>
+						</ol>
+					</div>
+
+					<!-- Exported Fields -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Exported Fields
+						</h2>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+							{[
+								'Reference', 'Quantity', 'Value', 'Footprint',
+								'Matched MPN', 'Manufacturer', 'Description', 'Distributor',
+								'Unit Price', 'Currency', 'Stock', 'Notes'
+							].map((field) => (
+								<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-3">
+									<code class="text-sm text-[var(--color-secondary)] font-mono">{field}</code>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Summary Row -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Summary
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							A summary row at the end of the exported file includes total quantity and total BOM cost.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/preferences" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Preferences
+						</a>
+						<a href="/docs/locking-dnp" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Locking & DNP →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

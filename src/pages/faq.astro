@@ -38,7 +38,7 @@ import FaqItem from '../components/FaqItem.astro';
 
 				<FaqItem
 					question="Which providers are supported?"
-					answer="BOMexplorer integrates with 6 providers: Nexar, OEMSecrets, DigiKey, Mouser, FindChips, and NextPCB. Free tier uses one configured provider. Pro tier accesses all 6 with automatic fallback."
+					answer="Free tier: OEMSecrets (free aggregator), DigiKey (direct API), and Mouser (direct API). Pro tier adds Nexar (premium — lifecycle status, tech specs) and FindChips (premium aggregator). Free users see premium providers listed in matching results with a 'premium_plan_required' reason."
 				/>
 
 				<FaqItem
@@ -60,17 +60,12 @@ import FaqItem from '../components/FaqItem.astro';
 
 				<FaqItem
 					question="What is AI Assist?"
-					answer="AI Assist has two components: (1) Natural language BOM filtering — type plain English queries like 'show me capacitors under $0.10' to highlight matching rows, and (2) AI part classification — Claude-powered classification for components that traditional matching can't handle."
+					answer="AI Assist has two components: (1) Natural language BOM filtering — type plain English queries like 'show me capacitors under $0.10' to highlight matching rows, and (2) AI part classification for components that traditional matching can't handle."
 				/>
 
 				<FaqItem
-					question="How does AI part classification work?"
-					answer="When a component can't be matched through normal means (crystal symbols, fiducials, mounting holes, copper-only net ties), Claude AI classifies the component and generates a provider-specific query to try to find a match. Unmatchable values are added to the smart skip list automatically."
-				/>
-
-				<FaqItem
-					question="What is the smart skip list?"
-					answer="BOMexplorer automatically skips known unmatchable values like TestPoint, LED, Fiducial, MountingHole unless an explicit MPN is provided. This prevents false matches and saves API calls."
+					question="What is AI Explainer?"
+					answer="AI Explainer provides AI-powered explanations and insights for component data. Free tier: 5 invocations/month. Pro tier: 20 invocations/month."
 				/>
 
 				<FaqItem
@@ -82,7 +77,7 @@ import FaqItem from '../components/FaqItem.astro';
 
 				<FaqItem
 					question="How often are parts re-checked?"
-					answer="Free tier: manual refresh only. Pro tier: automated overnight re-query via Celery background job. All active BOM lines are re-checked for price and stock changes while you sleep."
+					answer="Pro tier: automated overnight re-query via Celery background job. All active BOM lines are re-checked for price and stock changes while you sleep. Free tier: manual refresh available."
 				/>
 
 				<FaqItem
@@ -121,7 +116,7 @@ import FaqItem from '../components/FaqItem.astro';
 
 				<FaqItem
 					question="What export formats are supported?"
-					answer="Three formats: (1) CSV — UTF-8 BOM, comma-separated, (2) Excel — bold headers, auto-sized columns, sheet named 'BOM', (3) Manufacturer CSV — 12-column format ready for assembly partners."
+					answer="Free tier: CSV export. Pro tier: CSV and XLSX (Excel format) export."
 				/>
 
 				<FaqItem
@@ -133,22 +128,42 @@ import FaqItem from '../components/FaqItem.astro';
 
 				<FaqItem
 					question="Is there a free tier?"
-					answer="Yes, always free. Includes 3 projects, 50 BOM lines per project, single provider, 50 AI Assist lines/month, CSV & Excel export. No credit card required."
+					answer="Yes, always free. Includes 3 projects, 50 parts per project, 3 providers (OEMSecrets, DigiKey, Mouser), 50 AI Assist lines/month, 5 AI Explainer invocations/month, CSV export, natural language BOM filtering, manual search, lock/unlock BOM lines, DNP marking, price monitoring (nightly alerts), project cloning, and part alternatives + substitution history. No credit card required."
 				/>
 
 				<FaqItem
 					question="What does Pro include?"
-					answer="Unlimited projects, unlimited BOM lines, all 6 providers, 500 AI Assist lines/month, natural language BOM query, overnight supply chain monitoring, email alerts, part substitution history. $19/month via Paddle."
+					answer="Unlimited projects, unlimited parts per project, all 5 providers (adds Nexar premium and FindChips premium), 500 AI Assist lines/month, 20 AI Explainer invocations/month, XLSX export (Excel format), and all free plan features. $19/month via Paddle."
+				/>
+
+				<FaqItem
+					question="What are Token Packs?"
+					answer="Token packs are add-ons purchasable via Paddle when your AI quotas are exhausted. Tokens do not expire monthly. Starter pack: 100 tokens at $5 USD with 180-day expiry. Additional packs may be configured. Available on any plan."
+				/>
+
+				<FaqItem
+					question="Is there a free trial of Pro?"
+					answer="Yes, a 60-day Pro trial is available. Provisioned via internal webhook (e.g. course enrollment). You get full Pro plan access for 60 days. After expiry, your account reverts to free plan limits. This is a one-time offer and cannot be re-provisioned."
 				/>
 
 				<FaqItem
 					question="How is payment processed?"
-					answer="All Pro subscriptions are processed securely through Paddle. Supports cards, Apple Pay, and more. Cancel anytime from preferences — access continues until billing period ends."
+					answer="All Pro subscriptions and token packs are processed securely through Paddle. Supports cards, Apple Pay, and more. Cancel anytime from preferences — access continues until billing period ends."
 				/>
 
 				<FaqItem
 					question="Do you offer discounts?"
 					answer="Contact us for academic and open-source project discounts. We support educators and community builders with special pricing."
+				/>
+
+				<FaqItem
+					question="How do locked lines work?"
+					answer="Selecting or swapping a part auto-locks if the preference is enabled. Locked lines prevent accidental changes during re-matching operations."
+				/>
+
+				<FaqItem
+					question="What happens after trial expiry?"
+					answer="Even if the plan field remains 'paid', expired trial users get free-tier limits enforced. Per-user overrides can be set by admins via max_projects_override and max_parts_per_project_override."
 				/>
 
 				<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 mt-12 font-mono pl-4 border-l-4 border-[var(--color-secondary)]">Preferences & configuration</h2>

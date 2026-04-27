@@ -1,0 +1,110 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Projects - Documentation - BOMexplorer" currentPage="/docs/projects">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/projects" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Projects
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Create, manage, and clone BOMs efficiently.
+						</p>
+					</div>
+
+					<!-- Projects Page -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Projects Page (/projects)
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							The Projects page shows all your BOMs as a card grid. Each card displays the project name, variant tag (if set), and creation date.
+						</p>
+						<div class="space-y-4 mb-6">
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Creating a project</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Click <strong class="text-[var(--color-text)]">New Project</strong>, fill in the name and optional description, and click <strong class="text-[var(--color-text)]">Create</strong>.</p>
+							</div>
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Opening a project</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Click any project card to go to its BOM workspace.</p>
+							</div>
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Plan limits</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Free tier accounts can hold up to 3 projects with up to 50 parts per project. Pro tier accounts have higher limits. Current limits are displayed on each card when you are approaching them.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project Detail Page -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Project Detail Page
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							This is the main workspace for a project. It contains:
+						</p>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)] mb-6">
+							<li><strong class="text-[var(--color-text)]">Breadcrumb navigation</strong> — click <em>Projects</em> to return to the dashboard.</li>
+							<li><strong class="text-[var(--color-text)]">Project header</strong> — name, description, variant tag, Clone and Import CSV buttons.</li>
+							<li><strong class="text-[var(--color-text)]">Project Settings panel</strong> — collapsible; override global currency and distributor preferences for this project only.</li>
+							<li><strong class="text-[var(--color-text)]">BOM table</strong> — the core workspace.</li>
+							<li><strong class="text-[var(--color-text)]">Matching controls</strong> — Run Matching, AI Assist, and Export buttons above the table.</li>
+							<li><strong class="text-[var(--color-text)]">Natural Language Query bar</strong> — plain-English BOM filter.</li>
+						</ul>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-6">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Project Settings</h3>
+							<p class="text-[var(--color-text-muted)] text-sm mb-2">
+								Project Settings let you apply a currency or distributor preference that differs from your account-wide defaults. Each setting shows whether it is <strong class="text-[var(--color-text)]">Inheriting</strong> (from global preferences) or <strong class="text-[var(--color-text)]">Overriding</strong> (set locally).
+							</p>
+							<p class="text-[var(--color-secondary)] text-sm font-mono">
+								Click <strong class="text-[var(--color-text)]">Save</strong> to persist changes. Re-run matching after changing distributor preferences to apply them.
+							</p>
+						</div>
+					</div>
+
+					<!-- Cloning Projects -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Cloning Projects
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							Cloning creates a full copy of a project — BOM lines, all matched results, alternative data, and project-level preferences.
+						</p>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							<strong class="text-[var(--color-text)]">From the Projects page:</strong> Click <strong class="text-[var(--color-text)]">Clone project</strong> at the bottom of any project card.
+						</p>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							<strong class="text-[var(--color-text)]">From inside a project:</strong> Click <strong class="text-[var(--color-text)]">Clone project</strong> in the project header.
+						</p>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							After cloning, you are redirected to the new project. The clone is independent — changes to it do not affect the original.
+						</p>
+						<p class="text-[var(--color-text-muted)]">Cloning is useful for:</p>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Creating design variants from a shared base BOM</li>
+							<li>Testing a different distributor or currency configuration without affecting the original</li>
+							<li>Archiving a stable BOM state before making experimental changes</li>
+						</ul>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/getting-started" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Getting Started
+						</a>
+						<a href="/docs/bom-table" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							BOM Table →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

@@ -1,0 +1,69 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Manual Search - Documentation - BOMexplorer" currentPage="/docs/manual-search">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/manual-search" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Manual Search
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Search by keyword or partial MPN when automatic matching falls short.
+						</p>
+					</div>
+
+					<!-- Overview -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Accessing Manual Search
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							When automatic matching fails to find a usable part, or when you want to search by keyword rather than MPN, use the Manual Search page.
+						</p>
+						<p class="text-[var(--color-text-muted)]">
+							Access it from the Alternatives page by clicking <strong class="text-[var(--color-text)]">🔍 Manual search</strong>.
+						</p>
+					</div>
+
+					<!-- How to Search -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							How to Search
+						</h2>
+						<ol class="list-decimal list-inside space-y-3 text-[var(--color-text-muted)] mb-4">
+							<li>Enter a search query — keyword, partial MPN, or description text.</li>
+							<li>BOMExplorer searches all configured providers and returns matching Part Results.</li>
+							<li>Click <strong class="text-[var(--color-text)]">Select</strong> on any result to assign it to the BOM line.</li>
+						</ol>
+					</div>
+
+					<!-- Assign to Similar -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Assign to Similar
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							If multiple BOM lines have the same value and footprint, the <strong class="text-[var(--color-text)]">Assign to similar</strong> option lets you apply the manually selected part to all of them in one action.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/alternatives" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Alternatives
+						</a>
+						<a href="/docs/ai-features" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							AI Features →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

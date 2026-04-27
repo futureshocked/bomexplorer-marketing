@@ -1,0 +1,96 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Preferences - Documentation - BOMexplorer" currentPage="/docs/preferences">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/preferences" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Preferences
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Configure currency, distributors, and account-wide defaults.
+						</p>
+					</div>
+
+					<p class="text-[var(--color-text-muted)] mb-10">
+						Navigate to <strong class="text-[var(--color-text)]">Account → Preferences</strong> to configure account-wide defaults. Settings here apply to all projects unless overridden at the project level.
+					</p>
+
+					<!-- Preferences Tab -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Preferences Tab
+						</h2>
+						<ul class="space-y-4 text-[var(--color-text-muted)]">
+							<li class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<strong class="text-[var(--color-text)]">Preferred currency</strong> — sets the display currency for all price data across projects.
+							</li>
+							<li class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<strong class="text-[var(--color-text)]">Preferred distributors</strong> — select the distributors you want to include in matching. Leave all unchecked to allow any distributor. Projects can narrow this list further via Project Settings.
+							</li>
+							<li class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<strong class="text-[var(--color-text)]">Auto-lock parts</strong> — when enabled, a BOM line is automatically locked after you select or swap a part. This prevents accidental re-matching of finalised lines. Recommended for production BOMs.
+							</li>
+						</ul>
+						<p class="text-[var(--color-secondary)] font-mono text-sm mt-4">Click <strong class="text-[var(--color-text)]">Save preferences</strong> after making changes.</p>
+					</div>
+
+					<!-- Usage Tab -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Usage Tab
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">A personal statistics dashboard showing:</p>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)]">
+							<li>Total projects created (all-time)</li>
+							<li>Total BOM lines across all projects</li>
+							<li>Matched lines and match rate percentage</li>
+							<li>AI Assist and AI Advisor usage (this month and all-time)</li>
+							<li>Estimated time saved metric</li>
+						</ul>
+					</div>
+
+					<!-- NL Presets Tab -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							NL Presets Tab
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">A visual editor for custom filter presets.</p>
+						<p class="text-[var(--color-text-muted)] mb-4">Create presets using one or more conditions:</p>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li><strong class="text-[var(--color-text)]">Fields:</strong> Reference, Value, Footprint, MPN, Manufacturer, Category, Stock, Price, Match Type, Locked</li>
+							<li><strong class="text-[var(--color-text)]">Operators:</strong> equals, not equals, contains, less than, greater than, is null, is not null, and others</li>
+							<li><strong class="text-[var(--color-text)]">Highlight only mode</strong> — toggle per preset</li>
+						</ul>
+						<p class="text-[var(--color-text-muted)]">Presets can be reordered using the ↑↓ buttons. Order determines the sequence they appear as chips in the BOM table filter bar. Changes to presets apply across all projects immediately.</p>
+					</div>
+
+					<!-- Change Password Tab -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Change Password Tab
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">Enter your current password, new password, and confirmation.</p>
+						<p class="text-[var(--color-text-muted)]">Minimum length: 8 characters.</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/ai-features" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← AI Features
+						</a>
+						<a href="/docs/exporting" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Exporting →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

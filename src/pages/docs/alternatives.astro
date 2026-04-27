@@ -1,0 +1,103 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Alternatives - Documentation - BOMexplorer" currentPage="/docs/alternatives">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/alternatives" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Alternatives Page
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Find, compare, and substitute parts for any BOM line.
+						</p>
+					</div>
+
+					<!-- Overview -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Accessing the Alternatives Page
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							Access the Alternatives page by clicking any reference designator in the BOM table. This is the deep-dive view for a single BOM line.
+						</p>
+					</div>
+
+					<!-- Context Header -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Context Header
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							Shows the key attributes of the current line: reference designator, value, footprint, raw MPN, description, and comments. Use this to verify you are working on the correct line before making changes.
+						</p>
+					</div>
+
+					<!-- Distributor Offers -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Distributor Offers
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							The upper table shows all Part Results retrieved from providers for the current MPN — different listings from different distributors, sorted by rank (best match first). The currently selected part is marked with ✓.
+						</p>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Columns</h3>
+							<p class="text-[var(--color-text-muted)] text-sm mb-3">Rank, MPN, Manufacturer, Description, Distributor, Stock, Unit Price, Datasheet link.</p>
+							<p class="text-[var(--color-secondary)] text-sm font-mono">Click <strong class="text-[var(--color-text)]">Select</strong> on any row to make that distributor offer the selected part for this BOM line.</p>
+						</div>
+					</div>
+
+					<!-- Alternative Parts -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Alternative Parts
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							The lower section shows different MPNs that can substitute the current part. Results are displayed as cards in a grid.
+						</p>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Each card shows</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">MPN, match score (%), Manufacturer, Description, Package, Stock, Distributor, Source, Datasheet link.</p>
+						</div>
+						<div class="space-y-3 mb-4">
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Checkbox selection</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Select up to 3 alternatives for AI comparison.</p>
+							</div>
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Swap to this part</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Replaces the current MPN with this alternative. A confirmation dialog appears before the swap is committed. The backend re-queries the provider for fresh pricing and stock after a swap.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Substitution History -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Substitution History
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							Expand <strong class="text-[var(--color-text)]">Show history</strong> to see a log of all part swaps made on this BOM line, including the date and the From/To MPN for each swap. Both manual swaps and monitoring-triggered changes are recorded.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/nl-query" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← NL Query
+						</a>
+						<a href="/docs/manual-search" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Manual Search →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

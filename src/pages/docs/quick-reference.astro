@@ -1,0 +1,67 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Quick Reference - Documentation - BOMexplorer" currentPage="/docs/quick-reference">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/quick-reference" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Quick Reference
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Task-based lookup table for common workflows.
+						</p>
+					</div>
+
+					<div class="overflow-x-auto">
+						<table class="w-full text-sm border-collapse">
+							<thead>
+								<tr class="border-b border-[var(--color-border)]">
+									<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Task</th>
+									<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Where to go</th>
+								</tr>
+							</thead>
+							<tbody>
+								{[
+									['Create a project', 'Projects page → New Project'],
+									['Import a BOM', 'Project header → Import CSV'],
+									['Run matching', 'Project → Run Matching button'],
+									['View part details and alternatives', 'Click a reference designator in the BOM table'],
+									['Change the selected distributor offer', 'Alternatives page → Select on any offer row'],
+									['Swap to a different MPN', 'Alternatives page → Swap to this part'],
+									['Compare alternatives with AI', 'Alternatives page → select up to 3 → 🤖 Explain Selected'],
+									['Search BOM by keyword', 'NL Query bar — type in plain English'],
+									['Find a part by keyword', 'Alternatives page → 🔍 Manual search'],
+									['Change currency or distributors', 'Account → Preferences'],
+									['Create a custom BOM filter', 'NL Query bar → type query → Save as preset'],
+									['Export a manufacturer BOM', 'Project → Export dropdown'],
+									['Clone a project', 'Projects page or project header → Clone project'],
+									['View AI usage and stats', 'Account → Preferences → Usage'],
+									['Purchase AI tokens', 'Account → Billing'],
+								].map(([task, where]) => (
+									<tr class="border-b border-[var(--color-border)]/50 hover:bg-[var(--color-surface)] transition-colors">
+										<td class="py-3 px-4 text-[var(--color-text)] font-medium">{task}</td>
+										<td class="py-3 px-4 text-[var(--color-text-muted)]">{where}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+
+					<!-- Prev Navigation -->
+					<div class="flex justify-between pt-8 mt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/troubleshooting" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Troubleshooting
+						</a>
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

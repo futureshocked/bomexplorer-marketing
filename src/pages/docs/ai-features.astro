@@ -1,0 +1,89 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="AI Features - Documentation - BOMexplorer" currentPage="/docs/ai-features">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/ai-features" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							AI Features
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							AI Assist for unmatched lines and AI Advisor for part comparison.
+						</p>
+					</div>
+
+					<p class="text-[var(--color-text-muted)] mb-10">
+						BOMExplorer includes two distinct AI-powered features with separate usage budgets.
+					</p>
+
+					<!-- AI Assist -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							AI Assist
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							AI Assist targets BOM lines that conventional matching could not resolve — lines with no_match, missing MPN, or a previous AI-suggested result. It uses a language model to interpret the component description and searches providers for the best-fit part.
+						</p>
+						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-3 font-mono">To use:</h3>
+						<ol class="list-decimal list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Open a project with unmatched or pending lines.</li>
+							<li>Click <strong class="text-[var(--color-text)]">AI Assist</strong> in the toolbar above the BOM table.</li>
+							<li>Locked lines and DNP lines are skipped automatically.</li>
+							<li>Results appear in the BOM table with amber confidence and <code class="bg-[var(--color-surface)] text-[var(--color-secondary)] px-1.5 py-0.5 rounded text-sm font-mono">ai_suggested</code> match type.</li>
+							<li>Click any reference to open the Alternatives page and verify the suggestion before accepting it.</li>
+						</ol>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Budget</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">
+								AI Assist consumes one unit per eligible line processed. The monthly budget is displayed in a counter near the button. If the quota is exceeded, additional units can be purchased from the Billing page.
+							</p>
+						</div>
+					</div>
+
+					<!-- AI Advisor -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							AI Advisor
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							AI Advisor compares up to three alternative parts and returns a structured analysis — differences, trade-offs, and a recommendation — from a language model with full context about the BOM line.
+						</p>
+						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-3 font-mono">To use:</h3>
+						<ol class="list-decimal list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Open the Alternatives page for a BOM line.</li>
+							<li>Use the checkboxes on alternative part cards to select up to 3 parts (a counter shows <code class="bg-[var(--color-surface)] text-[var(--color-secondary)] px-1.5 py-0.5 rounded text-sm font-mono">X/3</code>).</li>
+							<li>Click <strong class="text-[var(--color-text)]">🤖 Explain Selected</strong>.</li>
+							<li>The analysis appears above the card grid with a formatted comparison and recommendation.</li>
+							<li>Use the <strong class="text-[var(--color-text)]">Copy</strong> button to export the analysis text to your clipboard.</li>
+						</ol>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Additional details</h3>
+							<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)] text-sm">
+								<li>Identical queries return a cached response instantly, marked with ⚡.</li>
+								<li>Multiple comparisons can be run in sequence; results stack on the page.</li>
+								<li>AI Advisor uses a separate monthly budget from AI Assist.</li>
+								<li>Remaining budget is shown in a counter near the Explain button.</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/manual-search" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Manual Search
+						</a>
+						<a href="/docs/preferences" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Preferences →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

@@ -22,11 +22,18 @@ import PricingCard from '../components/PricingCard.astro';
 					description="Perfect for small projects and getting started"
 					features={[
 						"Up to 3 projects",
-						"Up to 50 BOM lines per project",
-						"Single provider matching",
+						"Up to 50 parts per project",
+						"3 providers: OEMSecrets, DigiKey, Mouser",
 						"50 AI Assist lines/month",
-						"CSV & Excel export",
-						"Community support"
+						"5 AI Explainer invocations/month",
+						"CSV export",
+						"Natural language BOM filtering",
+						"Part alternatives + substitution history",
+						"Manual search",
+						"Lock/unlock BOM lines",
+						"DNP marking",
+						"Price monitoring (nightly alerts)",
+						"Project cloning"
 					]}
 				/>
 				<PricingCard
@@ -35,31 +42,35 @@ import PricingCard from '../components/PricingCard.astro';
 					description="For serious hardware development"
 					features={[
 						"Unlimited projects",
-						"Unlimited BOM lines",
-						"All 6 providers (Mouser, DigiKey, Nexar, OEMSecrets, FindChips, NextPCB)",
-						"Automatic provider fallback chain",
+						"Unlimited parts per project",
+						"5 providers (+ Nexar premium, FindChips premium)",
 						"500 AI Assist lines/month",
-						"Natural language BOM query",
-						"Overnight supply chain monitoring",
-						"Email digest alerts",
-						"Part substitution history",
-						"Priority support"
+						"20 AI Explainer invocations/month",
+						"XLSX export (Excel format)",
+						"Natural language BOM filtering",
+						"Part alternatives + substitution history",
+						"Manual search",
+						"Lock/unlock BOM lines",
+						"DNP marking",
+						"Price monitoring (nightly alerts)",
+						"Project cloning",
+						"60-day Pro trial available"
 					]}
 					popular={true}
 				/>
 				<PricingCard
-					title="Team"
-					price="Contact Us"
-					description="For teams and organizations"
+					title="Token Packs"
+					price="From $5"
+					description="Add-on for when AI quotas are exhausted"
 					features={[
-						"Everything in Pro",
-						"Team collaboration & shared projects",
-						"Role-based access control",
-						"Custom AI Assist line limits",
-						"Dedicated account manager",
-						"API access",
-						"Custom provider configurations",
-						"Volume pricing available"
+						"Available on any plan",
+						"One-time purchase via Paddle",
+						"Tokens do not expire monthly",
+						"Starter pack: 100 tokens, $5 USD",
+						"180-day token expiry",
+						"Use when AI Assist quota runs out",
+						"Use when AI Explainer quota runs out",
+						"Multiple pack options available"
 					]}
 				/>
 			</div>
@@ -129,12 +140,12 @@ import PricingCard from '../components/PricingCard.astro';
 					<div>
 						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">Is the free tier really free?</h3>
 						<p class="text-[var(--color-text-muted)] mb-6">
-							Yes, always. No credit card required. Free tier includes 3 projects, 50 BOM lines per project, a single provider, and 50 AI Assist lines per month.
+							Yes, always. No credit card required. Free tier includes 3 projects, 50 parts per project, 3 providers (OEMSecrets, DigiKey, Mouser), 50 AI Assist lines/month, and 5 AI Explainer invocations/month.
 						</p>
 
 						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">Which providers are supported?</h3>
 						<p class="text-[var(--color-text-muted)] mb-6">
-							Free tier: one configured provider. Pro tier: all 6 — Mouser, DigiKey, Nexar, OEMSecrets, FindChips, and NextPCB — with automatic fallback.
+							Free tier: OEMSecrets (free aggregator), DigiKey, Mouser. Pro tier adds Nexar (premium — lifecycle status, tech specs) and FindChips (premium aggregator). Free users see premium providers skipped in results with "premium_plan_required" reason.
 						</p>
 
 						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">Do you offer discounts?</h3>
@@ -143,19 +154,19 @@ import PricingCard from '../components/PricingCard.astro';
 						</p>
 					</div>
 					<div>
-						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">What is AI Assist?</h3>
+						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">What is AI Assist vs AI Explainer?</h3>
 						<p class="text-[var(--color-text-muted)] mb-6">
-							AI Assist includes natural language BOM filtering ("show me capacitors under $0.10") and AI-powered part classification for tricky components.
+							AI Assist: Natural language BOM filtering and part classification (50 lines/mo free, 500 Pro). AI Explainer: AI-powered explanations for component details (5/mo free, 20 Pro).
 						</p>
 
 						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">Can I cancel anytime?</h3>
 						<p class="text-[var(--color-text-muted)] mb-6">
-							Yes. No lock-in contracts. Cancel from preferences and keep access until your billing period ends. Automated downgrade preserves your data.
+							Yes. No lock-in contracts. Cancel from preferences and keep access until billing period ends. Your data is preserved.
 						</p>
 
-						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">Is there a student discount?</h3>
+						<h3 class="text-lg font-semibold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)]">What are Token Packs?</h3>
 						<p class="text-[var(--color-text-muted)]">
-							Yes, we offer special pricing for students and educators. Contact us with your .edu email for details.
+							One-time token purchases via Paddle for when AI quotas are exhausted. Starter pack: 100 tokens at $5 USD with 180-day expiry. Tokens do not expire monthly.
 						</p>
 					</div>
 				</div>

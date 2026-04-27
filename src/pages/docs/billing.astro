@@ -1,0 +1,71 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Billing & Plans - Documentation - BOMexplorer" currentPage="/docs/billing">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/billing" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Billing & Plans
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Free tier limits, Pro features, and AI token purchasing.
+						</p>
+					</div>
+
+					<!-- Free Tier -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Free Tier
+						</h2>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)]">
+							<li>Up to 3 projects</li>
+							<li>Up to 50 BOM lines per project</li>
+							<li>Limited monthly AI Assist quota</li>
+							<li>Limited monthly AI Advisor quota</li>
+							<li>CSV export</li>
+						</ul>
+					</div>
+
+					<!-- Pro Tier -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Pro Tier
+						</h2>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)]">
+							<li>Higher project and BOM line limits</li>
+							<li>Increased monthly AI quotas</li>
+							<li>XLSX export</li>
+							<li>Priority provider access</li>
+						</ul>
+					</div>
+
+					<!-- AI Token Purchases -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							AI Token Purchases
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							AI token purchases provide additional units for AI Assist and AI Advisor that do not expire at the end of the month. They are drawn on after the monthly quota is exhausted. Purchase tokens from <strong class="text-[var(--color-text)]">Account → Billing</strong>.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/locking-dnp" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Locking & DNP
+						</a>
+						<a href="/docs/troubleshooting" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Troubleshooting →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

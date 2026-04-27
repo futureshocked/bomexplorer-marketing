@@ -1,0 +1,103 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Getting Started - Documentation - BOMexplorer" currentPage="/docs/getting-started">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/getting-started" />
+				<div class="flex-1 min-w-0 prose-custom">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Getting Started
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							New to BOMExplorer? Start here.
+						</p>
+					</div>
+
+					<!-- Overview -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-4 pb-2 border-b border-[var(--color-border)] font-mono">
+							Overview
+						</h2>
+						<p class="text-[var(--color-text-muted)] leading-relaxed">
+							BOMExplorer is a web application for electronics engineers that automates the sourcing workflow around a Bill of Materials. Import a BOM CSV file exported from your EDA tool, run matching against component distributors, review pricing and stock, find and compare alternatives, and export a manufacturer-ready BOM — all in one place.
+						</p>
+					</div>
+
+					<!-- Core Concepts -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Core Concepts
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">Understanding these terms will help you navigate BOMExplorer efficiently.</p>
+						<div class="space-y-3 mb-6">
+							{[
+								{ term: 'Project', def: 'A container for one BOM and all its matched results. Each import belongs to a project.' },
+								{ term: 'BOM Line', def: 'A single row in your BOM — one component to be sourced, with its reference designator, value, quantity, and MPN.' },
+								{ term: 'MPN', def: 'Manufacturer Part Number (e.g. RC0402FR-0710RL). The primary identifier used to search for a component.' },
+								{ term: 'Match Type', def: 'How a part was located: exact_mpn, parametric, keyword, or no_match.' },
+								{ term: 'Confidence', def: 'Visual indicator of match quality — green (exact), amber (parametric), red (keyword or unmatched).' },
+								{ term: 'Part Result', def: 'A candidate returned by a provider: price, stock, distributor, and metadata.' },
+								{ term: 'Selected Part', def: 'The Part Result you have chosen for a BOM line, marked with ✓.' },
+								{ term: 'Alternative', def: 'A different MPN that can substitute the current selection.' },
+								{ term: 'Provider', def: 'A data source BOMExplorer queries — OEMSecrets, DigiKey, Mouser, and others.' },
+								{ term: 'Lock', def: 'A flag that prevents a BOM line from being edited or re-matched.' },
+								{ term: 'DNP', def: 'Do Not Populate — marks a BOM line as intentionally unpopulated.' },
+							].map((item) => (
+								<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+									<dt class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-1">{item.term}</dt>
+									<dd class="text-[var(--color-text-muted)] text-sm">{item.def}</dd>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Create an Account -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Create an Account
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							Navigate to <a href="https://bomexplorer.app" target="_blank" rel="noopener" class="text-[var(--color-primary)] hover:underline">bomexplorer.app</a> and sign up with your email address. Email verification is required before you can access your account.
+						</p>
+						<p class="text-[var(--color-text-muted)]">
+							Password requirements: minimum 8 characters. You can update your password at any time from <strong class="text-[var(--color-text)]">Account → Change Password</strong>.
+						</p>
+					</div>
+
+					<!-- Your First Project -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Your First Project
+						</h2>
+						<ol class="list-decimal list-inside space-y-3 text-[var(--color-text-muted)]">
+							<li>After signing in, you land on the <strong class="text-[var(--color-text)]">Projects</strong> page.</li>
+							<li>Click <strong class="text-[var(--color-text)]">New Project</strong>, enter a name and optional description, then click <strong class="text-[var(--color-text)]">Create</strong>.</li>
+							<li>Open the project and click <strong class="text-[var(--color-text)]">Import CSV</strong> to upload your BOM file.</li>
+							<li>Click <strong class="text-[var(--color-text)]">Run Matching</strong> to query providers and populate pricing and stock data.</li>
+						</ol>
+						<div class="mt-6 bg-[var(--color-secondary-dim)]/30 border border-[var(--color-secondary-dim)] rounded-lg p-4">
+							<p class="text-[var(--color-secondary)] text-sm font-mono">
+								That's the core loop. Everything else in this guide builds on it.
+							</p>
+						</div>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Overview
+						</a>
+						<a href="/docs/projects" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Projects →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

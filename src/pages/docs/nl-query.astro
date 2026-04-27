@@ -1,0 +1,112 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="NL Query - Documentation - BOMexplorer" currentPage="/docs/nl-query">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/nl-query" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Natural Language BOM Filter
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Filter and highlight BOM lines using plain English.
+						</p>
+					</div>
+
+					<!-- Basic Usage -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Basic Usage
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							Type a query into the NL Query search bar above the BOM table. Non-matching lines are hidden automatically. Press Escape or clear the bar to reset.
+						</p>
+						<div class="overflow-x-auto">
+							<table class="w-full text-sm border-collapse">
+								<thead>
+									<tr class="border-b border-[var(--color-border)]">
+										<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Example Query</th>
+										<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Result</th>
+									</tr>
+								</thead>
+								<tbody>
+									{[
+										['unmatched', 'Lines with no match found'],
+										['digikey', 'Parts sourced from DigiKey'],
+										['stock < 100', 'Lines with stock below 100 units'],
+										['capacitors', 'Lines whose reference starts with C'],
+										['locked', 'Locked BOM lines'],
+										['price > 0.10', 'Parts priced above $0.10'],
+										['no price', 'Lines with no pricing data'],
+										['exact match', 'Green confidence only'],
+									].map(([query, result]) => (
+										<tr class="border-b border-[var(--color-border)]/50 hover:bg-[var(--color-surface)] transition-colors">
+											<td class="py-3 px-4"><code class="bg-[var(--color-bg)] text-[var(--color-secondary)] px-2 py-0.5 rounded text-sm font-mono">{query}</code></td>
+											<td class="py-3 px-4 text-[var(--color-text-muted)]">{result}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Preset Filter Chips -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Preset Filter Chips
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">Below the query bar, preset chips provide one-click access to common filters. Built-in presets:</p>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li><strong class="text-[var(--color-text)]">Unmatched</strong> — no match found</li>
+							<li><strong class="text-[var(--color-text)]">Low Stock</strong> — stock below threshold</li>
+							<li><strong class="text-[var(--color-text)]">No Price</strong> — pricing unavailable</li>
+							<li><strong class="text-[var(--color-text)]">Exact Match</strong> — green confidence only</li>
+						</ul>
+						<p class="text-[var(--color-text-muted)]">Click a chip to apply it. Click again to toggle it off.</p>
+					</div>
+
+					<!-- Highlight Only Mode -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Highlight Only Mode
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							Some presets highlight matching lines rather than hiding non-matches. In this mode, all lines remain visible, but matching lines are visually emphasised. Highlight-only chips appear in purple.
+						</p>
+					</div>
+
+					<!-- Custom Presets -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Custom Presets
+						</h2>
+						<ol class="list-decimal list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Type a query into the NL bar.</li>
+							<li>Click <strong class="text-[var(--color-text)]">Save as preset</strong> and give it a name.</li>
+							<li>The preset appears as a chip and applies across all projects.</li>
+							<li>Manage, reorder, or delete custom presets from <strong class="text-[var(--color-text)]">Account → Preferences → NL Presets</strong>.</li>
+						</ol>
+						<p class="text-[var(--color-text-muted)]">
+							Custom presets can be configured with multiple conditions using fields including Reference, Value, Footprint, MPN, Manufacturer, Category, Stock, Price, Match Type, and Locked status. If a custom preset has the same name as a built-in preset, it replaces it.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/matching" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Matching
+						</a>
+						<a href="/docs/alternatives" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Alternatives →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

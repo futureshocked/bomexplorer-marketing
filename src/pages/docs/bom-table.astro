@@ -1,0 +1,149 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="BOM Table - Documentation - BOMexplorer" currentPage="/docs/bom-table">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/bom-table" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							BOM Table
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							The central workspace — import, view, edit, and manage all BOM lines.
+						</p>
+					</div>
+
+					<!-- Overview -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Overview
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							The BOM table is the central view for a project. It lists every BOM line with its matched part result, pricing, and status.
+						</p>
+					</div>
+
+					<!-- Default Columns -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Default Columns
+						</h2>
+						<div class="overflow-x-auto">
+							<table class="w-full text-sm border-collapse">
+								<thead>
+									<tr class="border-b border-[var(--color-border)]">
+										<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Column</th>
+										<th class="text-left py-3 px-4 text-[var(--color-secondary)] font-mono font-semibold">Content</th>
+									</tr>
+								</thead>
+								<tbody>
+									{[
+										['Image', 'Component thumbnail (where available from the provider)'],
+										['Ref', 'Reference designator — R1, C4, U2, etc.'],
+										['Value', 'Component value — 10kΩ, 100nF, STM32F4, etc.'],
+										['MPN (Raw)', 'Manufacturer part number as imported from your CSV'],
+										['Qty', 'Quantity for this BOM line'],
+										['Matched MPN', 'MPN of the selected part result'],
+										['Manufacturer', 'Part manufacturer'],
+										['Source', 'Distributor or provider that returned the match'],
+										['Stock', 'Available stock at the matched distributor'],
+										['Price', 'Unit price in your preferred currency'],
+										['Status', 'Confidence dot — green, amber, or red'],
+										['Alerts', 'Warning flags — out of stock, price spike, EOL notice, lead time increase'],
+										['Notes', 'Free-text field — click any cell to edit inline'],
+									].map(([col, desc]) => (
+										<tr class="border-b border-[var(--color-border)]/50 hover:bg-[var(--color-surface)] transition-colors">
+											<td class="py-3 px-4 text-[var(--color-text)] font-mono text-xs">{col}</td>
+											<td class="py-3 px-4 text-[var(--color-text-muted)]">{desc}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Optional Columns -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Optional Columns
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							The following columns are hidden by default. Enable them from the column visibility menu (the column icon above the table):
+						</p>
+						<div class="space-y-3">
+							{[
+								['Footprint', 'Component package as imported'],
+								['Lifecycle', 'Availability/lifecycle status (shown when the active provider supports it)'],
+								['Datasheet', 'Link to component datasheet (shown when the active provider supports it)'],
+							].map(([col, desc]) => (
+								<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-3">
+									<dt class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-1">{col}</dt>
+									<dd class="text-[var(--color-text-muted)] text-sm">{desc}</dd>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- Row Actions -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Row Actions
+						</h2>
+						<ul class="list-disc list-inside space-y-2 text-[var(--color-text-muted)]">
+							<li><strong class="text-[var(--color-text)]">Click a reference designator</strong> — opens the Alternatives page for that line.</li>
+							<li><strong class="text-[var(--color-text)]">Click any editable cell</strong> — activates inline editing for quantity, reference, notes, or raw MPN.</li>
+							<li><strong class="text-[var(--color-text)]">Padlock icon</strong> — toggle lock/unlock for that line.</li>
+							<li><strong class="text-[var(--color-text)]">Confidence dot</strong> — shows match quality at a glance.</li>
+						</ul>
+					</div>
+
+					<!-- Importing a BOM CSV -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Importing a BOM CSV
+						</h2>
+						<ol class="list-decimal list-inside space-y-2 text-[var(--color-text-muted)] mb-4">
+							<li>Click <strong class="text-[var(--color-text)]">Import CSV</strong> in the project header.</li>
+							<li>Select a <code class="bg-[var(--color-surface)] text-[var(--color-secondary)] px-1.5 py-0.5 rounded text-sm">.csv</code> file from your computer (max 2 MB).</li>
+							<li>Wait for processing. The button shows a spinner, then displays the count of imported lines.</li>
+							<li>Review the BOM table. Lines are sorted by reference designator.</li>
+						</ol>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Supported CSV formats</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">
+								KiCad, Altium, and generic comma- or tab-delimited files. Column headers are auto-detected: Reference, Value, Footprint/Package, MPN/Part Number, Quantity, Description. Unrecognised columns are stored as raw JSON alongside each line and are not lost.
+							</p>
+						</div>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4 mb-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Multi-designator lines</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">
+								If your CSV consolidates multiple designators into a single row (e.g. <code class="bg-[var(--color-bg)] text-[var(--color-secondary)] px-1.5 py-0.5 rounded text-sm">R1,R2,R3</code>), use the <strong class="text-[var(--color-text)]">Split</strong> action icon on that row to break them into individual BOM lines.
+							</p>
+						</div>
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+							<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Re-importing</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">
+								Importing the same file into an existing project updates existing lines and adds new ones. It does not delete lines that were previously imported.
+							</p>
+						</div>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/projects" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Projects
+						</a>
+						<a href="/docs/matching" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Matching →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

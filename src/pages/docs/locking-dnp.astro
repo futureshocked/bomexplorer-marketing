@@ -1,0 +1,65 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Locking & DNP - Documentation - BOMexplorer" currentPage="/docs/locking-dnp">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/locking-dnp" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Locking & DNP
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Lock finalised BOM lines and mark intentional unpopulated parts.
+						</p>
+					</div>
+
+					<!-- Locking BOM Lines -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							Locking BOM Lines
+						</h2>
+						<p class="text-[var(--color-text-muted)] mb-4">
+							Locking prevents a line from being edited, re-matched, or having its part swapped. It is the safeguard for BOM lines that have been reviewed and finalised.
+						</p>
+						<div class="space-y-4 mb-6">
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Per line</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Click the padlock icon on a row in the BOM table, or click the 🔒/🔓 button on the Alternatives page.</p>
+							</div>
+							<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-4">
+								<h3 class="text-[var(--color-secondary)] font-mono text-sm font-semibold mb-2">Auto-lock</h3>
+								<p class="text-[var(--color-text-muted)] text-sm">Enable <em>Auto-lock parts when selected</em> in Preferences. Any line where you select or swap a part is automatically locked afterward.</p>
+							</div>
+						</div>
+						<p class="text-[var(--color-text-muted)]">Locked lines display a 🔒 badge. To make changes to a locked line, unlock it first.</p>
+					</div>
+
+					<!-- DNP — Do Not Populate -->
+					<div class="mb-12">
+						<h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)] font-mono">
+							DNP — Do Not Populate
+						</h2>
+						<p class="text-[var(--color-text-muted)]">
+							Mark a line as DNP to indicate it is intentionally unpopulated in the assembled board. DNP lines are excluded from AI Assist processing and skipped during matching.
+						</p>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/exporting" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Exporting
+						</a>
+						<a href="/docs/billing" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Billing & Plans →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

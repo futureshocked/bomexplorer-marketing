@@ -1,0 +1,138 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+
+interface DocCard {
+	title: string;
+	description: string;
+	href: string;
+	icon: string;
+}
+
+const cards: DocCard[] = [
+	{
+		title: 'Getting Started',
+		description: 'Create an account, import your first BOM, and run matching in minutes.',
+		href: '/docs/getting-started',
+		icon: '🚀',
+	},
+	{
+		title: 'Projects',
+		description: 'Create, manage, and clone projects to manage multiple BOMs efficiently.',
+		href: '/docs/projects',
+		icon: '📁',
+	},
+	{
+		title: 'BOM Table',
+		description: 'The central workspace — import, view, edit, and manage all BOM lines.',
+		href: '/docs/bom-table',
+		icon: '📊',
+	},
+	{
+		title: 'Matching',
+		description: 'Query component providers for pricing, stock, and distributor data.',
+		href: '/docs/matching',
+		icon: '🔍',
+	},
+	{
+		title: 'NL Query',
+		description: 'Filter your BOM using plain English — "show me capacitors" or "price > 0.10".',
+		href: '/docs/nl-query',
+		icon: '💬',
+	},
+	{
+		title: 'Alternatives',
+		description: 'Find, compare, and substitute parts for any BOM line.',
+		href: '/docs/alternatives',
+		icon: '🔄',
+	},
+	{
+		title: 'Manual Search',
+		description: 'Search by keyword or partial MPN when automatic matching falls short.',
+		href: '/docs/manual-search',
+		icon: '🔎',
+	},
+	{
+		title: 'AI Features',
+		description: 'AI Assist for unmatched lines and AI Advisor for part comparison.',
+		href: '/docs/ai-features',
+		icon: '🤖',
+	},
+	{
+		title: 'Preferences',
+		description: 'Configure currency, distributors, and account-wide defaults.',
+		href: '/docs/preferences',
+		icon: '⚙️',
+	},
+	{
+		title: 'Exporting',
+		description: 'Export your BOM as CSV or XLSX for manufacturers and assembly partners.',
+		href: '/docs/exporting',
+		icon: '📦',
+	},
+	{
+		title: 'Locking & DNP',
+		description: 'Lock finalised BOM lines and mark intentional unpopulated parts.',
+		href: '/docs/locking-dnp',
+		icon: '🔒',
+	},
+	{
+		title: 'Billing & Plans',
+		description: 'Free tier limits, Pro features, and AI token purchasing.',
+		href: '/docs/billing',
+		icon: '💳',
+	},
+	{
+		title: 'Troubleshooting',
+		description: 'Common issues and their solutions to get you back on track.',
+		href: '/docs/troubleshooting',
+		icon: '🛠️',
+	},
+	{
+		title: 'Quick Reference',
+		description: 'Task-based lookup table for common workflows.',
+		href: '/docs/quick-reference',
+		icon: '📋',
+	},
+];
+---
+
+<MarketingLayout title="Documentation - BOMexplorer" currentPage="docs">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-12">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							BOMExplorer Documentation
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Everything you need to know about BOMExplorer — from first steps to advanced workflows.
+						</p>
+						<p class="text-sm text-[var(--color-secondary)] font-mono mt-2">
+							Version 1.2.0
+						</p>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						{cards.map((card) => (
+							<a
+								href={card.href}
+								class="group block p-6 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-secondary)] transition-all duration-200 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow-teal)]"
+							>
+								<div class="text-2xl mb-3">{card.icon}</div>
+								<h2 class="text-xl font-semibold text-[var(--color-text)] mb-2 font-mono group-hover:text-[var(--color-secondary)] transition-colors">
+									{card.title}
+								</h2>
+								<p class="text-[var(--color-text-muted)] text-sm">
+									{card.description}
+								</p>
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>

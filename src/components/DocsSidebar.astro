@@ -1,0 +1,47 @@
+---
+export interface Props {
+	currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+
+interface DocLink {
+	href: string;
+	label: string;
+}
+
+const sections: DocLink[] = [
+	{ href: '/docs', label: 'Overview' },
+	{ href: '/docs/getting-started', label: 'Getting Started' },
+	{ href: '/docs/projects', label: 'Projects' },
+	{ href: '/docs/bom-table', label: 'BOM Table' },
+	{ href: '/docs/matching', label: 'Matching' },
+	{ href: '/docs/nl-query', label: 'NL Query' },
+	{ href: '/docs/alternatives', label: 'Alternatives' },
+	{ href: '/docs/manual-search', label: 'Manual Search' },
+	{ href: '/docs/ai-features', label: 'AI Features' },
+	{ href: '/docs/preferences', label: 'Preferences' },
+	{ href: '/docs/exporting', label: 'Exporting' },
+	{ href: '/docs/locking-dnp', label: 'Locking & DNP' },
+	{ href: '/docs/billing', label: 'Billing & Plans' },
+	{ href: '/docs/troubleshooting', label: 'Troubleshooting' },
+	{ href: '/docs/quick-reference', label: 'Quick Reference' },
+];
+---
+
+<aside class="hidden lg:block w-64 shrink-0 sticky top-24 self-start max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 pb-8">
+	<nav class="space-y-1">
+		{sections.map((link) => (
+			<a
+				href={link.href}
+				class={`block px-3 py-2 text-sm rounded-md transition-colors ${
+					currentPage === link.href || (link.href === '/docs' && currentPage === '/docs')
+						? 'text-[var(--color-secondary)] bg-[var(--color-secondary-dim)]/20 font-medium'
+						: 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-2)]'
+				}`}
+			>
+				{link.label}
+			</a>
+		))}
+	</nav>
+</aside>

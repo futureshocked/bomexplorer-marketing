@@ -1,0 +1,86 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import DocsSidebar from '../../components/DocsSidebar.astro';
+---
+
+<MarketingLayout title="Troubleshooting - Documentation - BOMexplorer" currentPage="/docs/troubleshooting">
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex gap-8">
+				<DocsSidebar currentPage="/docs/troubleshooting" />
+				<div class="flex-1 min-w-0">
+					<div class="mb-10">
+						<h1 class="text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+							Troubleshooting
+						</h1>
+						<p class="text-lg text-[var(--color-text-muted)]">
+							Common issues and their solutions to get you back on track.
+						</p>
+					</div>
+
+					<div class="space-y-6">
+						<!-- Issue 1 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">"Import failed: your plan allows at most N parts"</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">Your CSV has more lines than your current plan permits. Either upgrade to Pro from the Billing page, or split the BOM into multiple smaller projects.</p>
+						</div>
+
+						<!-- Issue 2 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">"No provider results"</h3>
+							<ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)] text-sm">
+								<li>Verify your internet connection.</li>
+								<li>The provider may be temporarily unavailable. Try running matching again after a short wait.</li>
+								<li>If you have access to the admin panel, check <strong class="text-[var(--color-text)]">Admin → Providers</strong> for health status and error logs.</li>
+							</ul>
+						</div>
+
+						<!-- Issue 3 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">"AI Assist quota exceeded"</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">The monthly AI Assist budget has been consumed. It resets at the start of each billing month. Purchase tokens from the Billing page to add non-expiring units immediately.</p>
+						</div>
+
+						<!-- Issue 4 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">"Failed to load projects"</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">Refresh the page. If the problem persists, your session may have expired — log in again. Sessions use short-lived JWT access tokens with long-lived refresh tokens; re-authentication is occasionally required.</p>
+						</div>
+
+						<!-- Issue 5 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">Part matching returned the wrong component</h3>
+							<ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)] text-sm">
+								<li>Verify the MPN in your CSV is correct and complete.</li>
+								<li>Use <strong class="text-[var(--color-text)]">Manual Search</strong> to find alternatives by keyword or partial MPN.</li>
+								<li>Use <strong class="text-[var(--color-text)]">AI Assist</strong> for lines where the MPN is absent or ambiguous.</li>
+							</ul>
+						</div>
+
+						<!-- Issue 6 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">Changes not visible after import</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">The BOM table caches data locally. Try a hard refresh (<code class="bg-[var(--color-bg)] text-[var(--color-secondary)] px-1.5 py-0.5 rounded text-sm">Ctrl+Shift+R</code> on most browsers). If lines from a re-import are not appearing, wait a few seconds and refresh — the import job processes asynchronously.</p>
+						</div>
+
+						<!-- Issue 7 -->
+						<div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg p-6">
+							<h3 class="text-[var(--color-text)] font-mono font-semibold mb-3">Confidence dot is missing (no colour)</h3>
+							<p class="text-[var(--color-text-muted)] text-sm">BOM lines that were matched before the current release may not have a stored provider record. Re-running matching resolves this.</p>
+						</div>
+					</div>
+
+					<!-- Prev / Next Navigation -->
+					<div class="flex justify-between pt-8 mt-8 border-t border-[var(--color-border)]">
+						<a href="/docs/billing" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							← Billing & Plans
+						</a>
+						<a href="/docs/quick-reference" class="text-[var(--color-primary)] hover:underline text-sm font-mono">
+							Quick Reference →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MarketingLayout>
