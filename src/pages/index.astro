@@ -17,14 +17,20 @@ import FeatureCard from '../components/FeatureCard.astro';
 				<p class="text-xl text-[var(--color-text-muted)] mb-10 max-w-3xl mx-auto leading-relaxed">
 					Stop checking distributors one at a time. BOMexplorer searches them all and surfaces the best match for every component.
 				</p>
+				<p class="text-lg text-[var(--color-text-muted)] mb-10 max-w-3xl mx-auto leading-relaxed">
+					Built for PCB designers and electronics engineers who are tired of losing hours to manual component sourcing.
+				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a href="/contact" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-200">
-						Get Early Access
+						Sign Up Free
 					</a>
 					<a href="/features" class="border border-[var(--color-border)] text-[var(--color-text)] px-8 py-3 rounded-md font-semibold hover:border-[var(--color-secondary)] hover:shadow-[var(--shadow-glow-teal)] transition-all duration-200">
 						See the Features
 					</a>
 				</div>
+				<p class="text-sm text-[var(--color-text-muted)] mt-6">
+					<strong>Free tier available.</strong> No credit card required. Upgrade to Pro ($10/month) for unlimited projects and additional providers. <a href="/pricing" class="text-[var(--color-secondary)] hover:underline">See pricing →</a>
+				</p>
 			</div>
 
 			<!-- Hero Visual -->
@@ -82,7 +88,7 @@ import FeatureCard from '../components/FeatureCard.astro';
 						</div>
 						<div class="text-sm text-[var(--color-warning)] font-mono">47</div>
 						<div class="text-sm text-[var(--color-primary)] font-semibold font-mono">$3.89</div>
-						<div class="text-xs bg-amber-500/10 text-amber-300 px-2 py-1 rounded w-fit font-mono">Nexar</div>
+						<div class="text-xs bg-green-500/10 text-green-300 px-2 py-1 rounded w-fit font-mono">OEMSecrets</div>
 						<div class="text-xs bg-amber-500/10 text-amber-300 px-2 py-1 rounded w-fit font-mono">87%</div>
 					</div>
 				</div>
@@ -105,18 +111,9 @@ import FeatureCard from '../components/FeatureCard.astro';
 				</p>
 			</div>
 
-			<!-- Warning callout -->
-			<div class="bg-[var(--color-bg)] border border-[var(--color-warning)]/40 rounded-lg p-4 mb-8 flex items-start gap-3">
-				<svg class="w-5 h-5 text-[var(--color-warning)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-					<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-				</svg>
-				<div>
-					<p class="text-sm font-semibold text-[var(--color-text)] mb-1">This video is super-detailed — heads up.</p>
-					<p class="text-sm text-[var(--color-text-muted)]">
-						It's a real walkthrough. Many features we mentioned as "good to have" have since shipped — you'll see them live in the recording.
-					</p>
-				</div>
-			</div>
+				<p class="text-center text-sm text-[var(--color-text-muted)] italic mb-8">
+					Recorded during early development — several features shown have since shipped.
+				</p>
 
 			<!-- Vimeo embed -->
 			<div class="aspect-video w-full bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-[var(--shadow-glow-blue)] overflow-hidden mb-6">
@@ -151,9 +148,9 @@ import FeatureCard from '../components/FeatureCard.astro';
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-[var(--color-text)] mb-3">150 manual lookups</h3>
+					<h3 class="text-xl font-semibold text-[var(--color-text)] mb-3">Manual lookups multiply fast</h3>
 					<p class="text-[var(--color-text-muted)]">
-						Checking 5 providers for 50 parts means 250 manual lookups. BOMexplorer does it in seconds.
+						Checking every provider for every part in a real BOM takes hours. BOMexplorer does it in seconds.
 					</p>
 				</div>
 				<div class="text-center">
@@ -268,10 +265,10 @@ import FeatureCard from '../components/FeatureCard.astro';
 				Stop checking distributors manually.
 			</h2>
 			<p class="text-blue-100 mb-8 text-lg">
-				Join the waitlist and be among the first to try BOMexplorer.
+				BOMexplorer is live and accepting users in early access. Sign up free — no credit card required.
 			</p>
 			<a href="/contact" class="bg-[var(--color-secondary)] text-[var(--color-bg)] px-8 py-3 rounded-md font-semibold hover:shadow-lg hover:shadow-teal-500/40 transition-all duration-200 inline-block">
-				Get Early Access
+				Sign Up Free
 			</a>
 		</div>
 	</section>
