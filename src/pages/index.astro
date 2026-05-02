@@ -90,6 +90,51 @@ import FeatureCard from '../components/FeatureCard.astro';
 		</div>
 	</section>
 
+	<!-- Video Section -->
+	<section class="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-surface)]">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-8">
+				<div class="mb-4">
+					<span class="text-xs font-mono text-[var(--color-secondary)] uppercase tracking-widest border border-[var(--color-secondary)]/30 rounded-full px-3 py-1">[ SEE IT IN ACTION ]</span>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-4 font-mono">
+					Watch a complete BOM sourcing session
+				</h2>
+				<p class="text-lg text-[var(--color-text-muted)]">
+					Start to finish — on a real project: Smart USB Thumb Drive.
+				</p>
+			</div>
+
+			<!-- Warning callout -->
+			<div class="bg-[var(--color-bg)] border border-[var(--color-warning)]/40 rounded-lg p-4 mb-8 flex items-start gap-3">
+				<svg class="w-5 h-5 text-[var(--color-warning)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+				</svg>
+				<div>
+					<p class="text-sm font-semibold text-[var(--color-text)] mb-1">This video is super-detailed — heads up.</p>
+					<p class="text-sm text-[var(--color-text-muted)]">
+						It's a real walkthrough. Many features we mentioned as "good to have" have since shipped — you'll see them live in the recording.
+					</p>
+				</div>
+			</div>
+
+			<!-- Vimeo embed -->
+			<div class="aspect-video w-full bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-[var(--shadow-glow-blue)] overflow-hidden mb-6">
+				<iframe
+					src="https://player.vimeo.com/video/1187976776?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+					allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					class="w-full h-full"
+					title="BOMexplorer — Smart USB Thumb Drive BOM Matching"
+				></iframe>
+			</div>
+
+			<p class="text-center text-sm text-[var(--color-text-muted)] italic">
+				No slides. No demo data. Real components, live prices.
+			</p>
+		</div>
+	</section>
+
 	<!-- Problem Section -->
 	<section class="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
 		<!-- Subtle gradient background -->
